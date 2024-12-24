@@ -38,6 +38,9 @@
    ```bash
    git clone https://github.com/yourusername/bug-hunter.git
    cd bug-hunter
+   python3 -m venv env
+   source env/bin/activate
+   
 2. Install dependencies:
    - **Ensure Python 3.x is installed.**
    - **Install required Python packages**:
