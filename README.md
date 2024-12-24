@@ -97,6 +97,7 @@
 <img src="https://raw.githubusercontent.com/capture0x/Bug-Hunter/refs/heads/main/3.png" width="32%"></img>
 <img src="https://raw.githubusercontent.com/capture0x/Bug-Hunter/refs/heads/main/4.png" width="32%"></img>
 <img src="https://raw.githubusercontent.com/capture0x/Bug-Hunter/refs/heads/main/5.png" width="32%"></img>
+<img src="https://raw.githubusercontent.com/capture0x/Bug-Hunter/refs/heads/main/7.png" width="32%"></img>
 
 ## 🤖 Contributing
 
