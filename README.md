@@ -98,7 +98,9 @@ Contributions are welcome! Please feel free to submit issues, feature requests, 
 
 ## License
 
-This project is licensed under the MIT License. See the LICENSE file for details.
+This project is licensed under the **GNU General Public License v3.0**. 
+
+You can view the full license details [here](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
 ## Author
 
