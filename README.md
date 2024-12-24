@@ -69,13 +69,14 @@ Dependencies
 
 Screenshots
 
-Add relevant screenshots here.
+
 Contributing
 
 We welcome contributions from the community! Feel free to submit issues, feature requests, or pull requests to help improve Bug Hunter.
 License
 
 This project is licensed under the MIT License. See the LICENSE file for more details.
+
 Author
 
 Developed with passion by Tmrswrr.
