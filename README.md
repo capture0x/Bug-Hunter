@@ -51,7 +51,7 @@
 4. **Monitor real-time results** in the GUI.
 5. **Access saved results** in the `results` directory.
 
-## 👩‍💻 Workflow
+## 🔋 Workflow
 
 ### Subdomain Discovery
 - **Discover subdomains** with integrated tools.
