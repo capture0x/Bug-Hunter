@@ -4,33 +4,33 @@
 
 ## 🔎 Features 🔎
 
-### Subdomain Discovery
+### ✅ Subdomain Discovery
 - **Automated Scanning**: Leverages tools like `subfinder`, `assetfinder`, and APIs such as `Certspotter` and `crt.sh` to discover subdomains.
 - **Validation**: Filters and validates subdomains using `httpx` to identify live targets.
 
-### Directory Scanning
+### ✅ Directory Scanning
 - **FFUF Integration**: Performs directory brute-forcing on identified subdomains using `ffuf`.
 - **Customizable Wordlists**: Supports customizable wordlists for tailored scans.
 - **Smart Filtering**: Focuses on HTTP status codes `200` and `403` for meaningful results.
 - **Formatted Output**: Saves results in a structured format for easy interpretation.
 
-### Parameter Extraction
+### ✅ Parameter Extraction
 - **ParamSpider Integration**: Extracts URL parameters for vulnerability analysis.
 - **Intelligent Filtering**: Retains only meaningful results for further exploration.
 
-### XSS Detection
+### ✅ XSS Detection
 - **Automated XSS Scanning**: Identifies common vulnerabilities using integrated tools.
 - **Custom Scripts**: Supports custom scripts for advanced scans.
 
-### Results Management
+### 📑 Results Management
 - **Organized Storage**: Automatically saves all scan results into the `results` directory.
 - **Real-Time Feedback**: Displays progress and results dynamically in the GUI.
 
-### Graphical User Interface (GUI)
+### 🎊 Graphical User Interface (GUI)
 - **User-Friendly Design**: Built with Tkinter for an intuitive and responsive experience.
 - **Custom Styling**: Highlights critical information with color-coded outputs.
 
-## Installation
+## 💻 Installation
 
 1. Clone this repository:
    ```bash
