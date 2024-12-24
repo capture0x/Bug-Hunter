@@ -1,82 +1,106 @@
 # Bug Hunter - Full Scanner
 
-**Bug Hunter** is a comprehensive and efficient tool designed for bug bounty hunters to streamline subdomain discovery, directory scanning, parameter extraction, and vulnerability identification. This GUI-based scanner integrates multiple tools and techniques to provide a seamless bug hunting experience.
+**Bug Hunter** is a comprehensive and advanced tool tailored for bug bounty hunters, offering streamlined subdomain discovery, directory scanning, parameter extraction, and vulnerability detection. With its intuitive GUI, Bug Hunter integrates various tools and techniques to provide a seamless and efficient bug-hunting experience.
+
+## Features
+
+### Subdomain Discovery
+- **Automated Scanning**: Leverages tools like `subfinder`, `assetfinder`, and APIs such as `Certspotter` and `crt.sh` to discover subdomains.
+- **Validation**: Filters and validates subdomains using `httpx` to identify live targets.
+
+### Directory Scanning
+- **FFUF Integration**: Performs directory brute-forcing on identified subdomains using `ffuf`.
+- **Customizable Wordlists**: Supports customizable wordlists for tailored scans.
+- **Smart Filtering**: Focuses on HTTP status codes `200` and `403` for meaningful results.
+- **Formatted Output**: Saves results in a structured format for easy interpretation.
+
+### Parameter Extraction
+- **ParamSpider Integration**: Extracts URL parameters for vulnerability analysis.
+- **Intelligent Filtering**: Retains only meaningful results for further exploration.
+
+### XSS Detection
+- **Automated XSS Scanning**: Identifies common vulnerabilities using integrated tools.
+- **Custom Scripts**: Supports custom scripts for advanced scans.
+
+### Results Management
+- **Organized Storage**: Automatically saves all scan results into the `results` directory.
+- **Real-Time Feedback**: Displays progress and results dynamically in the GUI.
+
+### Graphical User Interface (GUI)
+- **User-Friendly Design**: Built with Tkinter for an intuitive and responsive experience.
+- **Custom Styling**: Highlights critical information with color-coded outputs.
 
 ## Installation
 
-### Install dependencies:
+1. Clone this repository:
+   ```bash
+   git clone https://github.com/yourusername/bug-hunter.git
+   cd bug-hunter
+2. Install dependencies:
+   - **Ensure Python 3.x is installed.**
+   - **Install required Python packages**:
+     `pip install -r requirements.txt`
+  - **Install additional tools like** `subfinder`, `assetfinder`, `ffuf`, `httpx`, and `ParamSpider`
+3. Run the application:
+    `python bug.py`
+## Usage
 
-- Ensure Python 3.x is installed.
-- Install required Python packages:
+1. **Launch the application** using the command above.
+2. **Enter the target domain** in the input field.
+3. **Click "Start Full Scan"** to initiate the scanning process.
+4. **Monitor real-time results** in the GUI.
+5. **Access saved results** in the `results` directory.
 
-  ```bash
-  pip install -r requirements.txt
+## Workflow
 
-    Install tools like subfinder, assetfinder, ffuf, httpx, and others as required.
+### Subdomain Discovery
+- **Discover subdomains** with integrated tools.
+- **Validate targets** to identify live domains.
 
-Run the application:
+### Directory Scanning
+- **Perform directory brute-forcing**.
+- **Save results** with relevant HTTP status codes.
 
-python bug.py
+### Parameter Extraction
+- **Extract and analyze** URL parameters.
 
-Usage
+### XSS Detection
+- **Identify potential vulnerabilities** using automated scans.
 
-    Launch the application using the command above.
-    Enter the target domain in the input field.
-    Click "Start Full Scan" to initiate the scanning process.
-    Results will be displayed in real-time within the GUI and saved in the results directory.
+### Results Management
+- **Organize and save** all outputs in the `results` folder.
 
-Detailed Workflow
-Subdomain Discovery:
+## Dependencies
 
-    Fetch subdomains using multiple tools like subfinder, assetfinder, and external APIs.
-    Validate subdomains by checking their status using httpx.
-
-Directory Scanning:
-
-    Use ffuf to perform directory brute-forcing on identified subdomains.
-    Save results with HTTP status codes 200 and 403 in a structured format.
-
-Parameter Extraction:
-
-    Execute ParamSpider to discover parameters in URLs for further analysis.
-
-XSS Scanning:
-
-    Perform automated cross-site scripting (XSS) scans on the target domains.
-
-Results Organization:
-
-    Automatically save and organize all scan results in the results directory for easy access.
-
-Dependencies
-
-    Python 3.x
-    Tools:
-        subfinder
-        assetfinder
-        httpx
-        ffuf
-        ParamSpider
-    APIs:
-        Certspotter
-        crt.sh
-    Libraries:
-        PIL
-        Tkinter
-        subprocess
-        threading
-        re
-
-Screenshots
+- **Python 3.x**
+- **Tools**:
+  - `subfinder`
+  - `assetfinder`
+  - `httpx`
+  - `ffuf`
+  - `ParamSpider`
+- **APIs**:
+  - `Certspotter`
+  - `crt.sh`
+- **Libraries**:
+  - `PIL` (for image handling)
+  - `Tkinter` (for GUI)
+  - `subprocess`
+  - `threading`
+  - `re`
+## Screenshots
 
 
-Contributing
 
-We welcome contributions from the community! Feel free to submit issues, feature requests, or pull requests to help improve Bug Hunter.
-License
+## Contributing
 
-This project is licensed under the MIT License. See the LICENSE file for more details.
+Contributions are welcome! Please feel free to submit issues, feature requests, or pull requests to enhance the functionality and features of Bug Hunter.
 
-Author
+## License
 
-Developed with passion by Tmrswrr.
+This project is licensed under the MIT License. See the LICENSE file for details.
+
+## Author
+
+Developed with passion by **Tmrswrr**.
+
