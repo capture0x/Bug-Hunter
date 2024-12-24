@@ -2,7 +2,7 @@
 
 **Bug Hunter** is a comprehensive and advanced tool tailored for bug bounty hunters, offering streamlined subdomain discovery, directory scanning, parameter extraction, and vulnerability detection. With its intuitive GUI, Bug Hunter integrates various tools and techniques to provide a seamless and efficient bug-hunting experience.
 
-## 🔎 Features 🔎
+## ⚙️ Features 
 
 ### ✅ Subdomain Discovery
 - **Automated Scanning**: Leverages tools like `subfinder`, `assetfinder`, and APIs such as `Certspotter` and `crt.sh` to discover subdomains.
@@ -43,7 +43,7 @@
   - **Install additional tools like** `subfinder`, `assetfinder`, `ffuf`, `httpx`, and `ParamSpider`
 3. Run the application:
     `python bug.py`
-## Usage
+## 🕹️ Usage
 
 1. **Launch the application** using the command above.
 2. **Enter the target domain** in the input field.
@@ -51,7 +51,7 @@
 4. **Monitor real-time results** in the GUI.
 5. **Access saved results** in the `results` directory.
 
-## Workflow
+## 👩‍💻 Workflow
 
 ### Subdomain Discovery
 - **Discover subdomains** with integrated tools.
@@ -70,7 +70,7 @@
 ### Results Management
 - **Organize and save** all outputs in the `results` folder.
 
-## Dependencies
+## 💾 Dependencies
 
 - **Python 3.x**
 - **Tools**:
@@ -88,21 +88,21 @@
   - `subprocess`
   - `threading`
   - `re`
-## Screenshots
+## 📷 Screenshots
 
 
 
-## Contributing
+## 🤖 Contributing
 
 Contributions are welcome! Please feel free to submit issues, feature requests, or pull requests to enhance the functionality and features of Bug Hunter.
 
-## License
+## ⚡ License
 
 This project is licensed under the **GNU General Public License v3.0**. 
 
 You can view the full license details [here](https://www.gnu.org/licenses/gpl-3.0.en.html).
 
-## Author
+## 🪄 Author
 
 Developed with passion by **Tmrswrr**.
 
