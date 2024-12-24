@@ -1,8 +1,8 @@
-# 🔦 Bug Hunter - Full Scanner 🔦
+# 🛸 Bug Hunter - Full Scanner 🛸
 
 **Bug Hunter** is a comprehensive and advanced tool tailored for bug bounty hunters, offering streamlined subdomain discovery, directory scanning, parameter extraction, and vulnerability detection. With its intuitive GUI, Bug Hunter integrates various tools and techniques to provide a seamless and efficient bug-hunting experience.
 
-## Features
+## 🔎 Features 🔎
 
 ### Subdomain Discovery
 - **Automated Scanning**: Leverages tools like `subfinder`, `assetfinder`, and APIs such as `Certspotter` and `crt.sh` to discover subdomains.
