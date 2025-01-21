@@ -26,7 +26,6 @@ def run_nuclei_scan(domain, output_widget, template=None):
         with open("subdomains.txt", "r") as file:
             subdomains = file.readlines()
 
-        # Açık sonuç dosyasını oluştur
         with open(output_file, "w") as outfile:
             for subdomain in subdomains:
                 subdomain = subdomain.strip()
