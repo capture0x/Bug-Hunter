@@ -36,7 +36,7 @@
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/bug-hunter.git
+   git clone https://github.com/capture0x/Bug-Hunter.git
    cd bug-hunter
    python3 -m venv env
    source env/bin/activate
