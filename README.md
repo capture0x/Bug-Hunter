@@ -37,14 +37,14 @@
 1. Clone this repository:
    ```bash
    git clone https://github.com/capture0x/Bug-Hunter.git
-   cd bug-hunter
-   python3 -m venv env
-   source env/bin/activate
+   cd Bug-Hunter
    
 2. Install dependencies:
    - **Ensure Python 3.x is installed.**
    - **Install required Python packages**:
      `pip install -r requirements.txt`
+     `chmod +x install.sh`
+     `bash install.sh`
   - **Install additional tools like** `subfinder`, `assetfinder`, `ffuf`, `httpx`, and `ParamSpider`
 3. Run the application:
     `python3 bug.py`
