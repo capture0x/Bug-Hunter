@@ -158,7 +158,7 @@ def fetch_subdomains(domain, output_widget):
     """
     commands = [
         f"subfinder -d {domain} -silent | ./httpx -mc 200",
-        f"curl -s 'https://api.certspotter.com/v1/issuances?domain=tesla.com&include_subdomains=true&expand=dns_names' | jq -r '.[] | .dns_names[]' | grep -Po '(([\w.-]+)\\.[A-Za-z]{2,})' | sort -u | ./httpx -mc 200"
+        f"curl -s 'https://api.certspotter.com/v1/issuances?domain={domain}&include_subdomains=true&expand=dns_names' | jq -r '.[] | .dns_names[]' | grep -Po '(([\\w.-]+)\\.[A-Za-z]{2,})' | sort -u | ./httpx -mc 200"
         #f"amass enum -d {domain} | ./httpx -mc 200",
         f"curl -s 'https://crt.sh/?q=%25.{domain}&output=json' | jq -r '.[].name_value' | sed 's/\\*\\.//g' | ./httpx -mc 200",
         f"assetfinder --subs-only {domain} | ./httpx -mc 200",
