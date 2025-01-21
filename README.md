@@ -47,7 +47,9 @@
      chmod +x install.sh
      bash install.sh
   - **Install additional tools like** `subfinder`, `assetfinder`, `ffuf`, `httpx`, and `ParamSpider`
-**:warning: Do not forget to run the `install.sh` script! This step is crucial to set up the environment correctly.**
+### :warning: Important
+
+**Do not forget to run the `install.sh` script! This step is crucial to set up the environment correctly.**
 
 3. Run the application:
     `python3 bug.py`
