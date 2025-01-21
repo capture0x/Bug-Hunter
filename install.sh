@@ -5,6 +5,7 @@ curl -LO https://github.com/projectdiscovery/httpx/releases/download/v1.6.9/http
 curl -LO https://github.com/projectdiscovery/subfinder/releases/download/v2.6.8/subfinder_2.6.8_linux_amd64.zip && unzip subfinder_2.6.8_linux_amd64.zip && sudo mv subfinder /usr/local/bin && sudo chmod +x /usr/local/bin/subfinder
 git clone https://github.com/projectdiscovery/nuclei-templates.git && echo "Nuclei templates downloaded successfully."
 pipx install git+https://github.com/devanshbatham/ParamSpider.git
+sudo apt install golang-go
 go install github.com/tomnomnom/assetfinder@latest
 go install -v github.com/projectdiscovery/subfinder/v2/cmd/subfinder@latest
 export PATH=$PATH:$(go env GOPATH)/bin
