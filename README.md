@@ -47,7 +47,7 @@
      `pip install -r requirements.txt`
   - **Install additional tools like** `subfinder`, `assetfinder`, `ffuf`, `httpx`, and `ParamSpider`
 3. Run the application:
-    `python bug.py`
+    `python3 bug.py`
 ## 🕹️ Usage
 
 1. **Launch the application** using the command above.
