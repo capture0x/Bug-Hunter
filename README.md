@@ -47,7 +47,7 @@
      chmod +x install.sh
      bash install.sh
   - **Install additional tools like** `subfinder`, `assetfinder`, `ffuf`, `httpx`, and `ParamSpider`
-### :warning: Important
+#### :warning: Important
 
 **Do not forget to run the `install.sh` script! This step is crucial to set up the environment correctly.**
 
