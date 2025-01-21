@@ -29,7 +29,7 @@ def run_command(command, output_widget, command_tag="terminal_red", output_tag="
     Executes a shell command and displays its output in the GUI with proper styling.
     """
     try:
-        # Insert the command with the specified tag
+   
         output_widget.insert(tk.END, f"Running Command: {command}\n", command_tag)
         output_widget.yview(tk.END)
 
@@ -52,7 +52,7 @@ def run_command(command, output_widget, command_tag="terminal_red", output_tag="
     except Exception as e:
         output_widget.insert(tk.END, f"An error occurred: {e}\n", "red")
         output_widget.yview(tk.END)
-        return []  # Return an empty list to avoid NoneType issues
+        return [] 
 
 
 def directory_scan_ffuf(domain, output_widget=None):
@@ -61,13 +61,13 @@ def directory_scan_ffuf(domain, output_widget=None):
     Saves results to results/directory/{domain}.txt only if there are 200 or 403 responses.
     """
     try:
-        wordlist = "common.txt"  # Sabit wordlist dosyası
-        sanitized_domain = sanitize_filename(domain)  # Dosya ismi için domain temizliği
-        results_folder = "results/directory"  # Sonuçların kaydedileceği ana klasör
-        os.makedirs(results_folder, exist_ok=True)  # Klasörü oluştur (varsa hata yapmaz)
+        wordlist = "common.txt"  
+        sanitized_domain = sanitize_filename(domain) 
+        results_folder = "results/directory" 
+        os.makedirs(results_folder, exist_ok=True)  
 
-        temp_output_file = os.path.join(results_folder, f"{sanitized_domain}_temp.txt")  # Geçici dosya
-        final_output_file = os.path.join(results_folder, f"{sanitized_domain}.txt")  # Nihai dosya
+        temp_output_file = os.path.join(results_folder, f"{sanitized_domain}_temp.txt")  
+        final_output_file = os.path.join(results_folder, f"{sanitized_domain}.txt") 
 
         if not os.path.exists(wordlist):
             raise FileNotFoundError(f"Wordlist '{wordlist}' not found.")
@@ -76,7 +76,6 @@ def directory_scan_ffuf(domain, output_widget=None):
             output_widget.insert(tk.END, f"[+] Scanning directories for {domain} using ffuf...\n", "default")
             output_widget.yview(tk.END)
 
-        # ffuf komutu
         command = f"ffuf -w {wordlist} -u {domain}/FUZZ -mc 200,403 -o {temp_output_file} -of md"
         process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
 
@@ -89,7 +88,7 @@ def directory_scan_ffuf(domain, output_widget=None):
             if output_widget:
                 output_widget.insert(tk.END, clean_output(stderr), "red")
 
-        # Geçici dosyayı temiz formatta düzenleyerek kaydet
+
         if os.path.exists(temp_output_file):
             with open(temp_output_file, "r") as temp_file:
                 content = temp_file.readlines()
@@ -99,9 +98,9 @@ def directory_scan_ffuf(domain, output_widget=None):
 
             for line in content:
                 line = line.strip()
-                if line.startswith("|"):  # FFUF çıktısındaki tablo satırları
+                if line.startswith("|"):  
                     columns = [col.strip() for col in line.split("|")]
-                    if len(columns) > 5 and columns[5] in ["200", "403"]:  # Sadece 200 ve 403 durum kodları
+                    if len(columns) > 5 and columns[5] in ["200", "403"]:  
                         current_entry = {
                             "Status Code": columns[5],
                             "URL": columns[2],
@@ -112,7 +111,7 @@ def directory_scan_ffuf(domain, output_widget=None):
                         }
                         formatted_results.append(current_entry)
 
-            if formatted_results:  # Eğer sonuçlar varsa
+            if formatted_results: 
                 with open(final_output_file, "w") as final_file:
                     final_file.write(f"# FFUF Report for: {domain}\n\n")
                     for entry in formatted_results:
@@ -125,8 +124,8 @@ def directory_scan_ffuf(domain, output_widget=None):
 
                 if output_widget:
                     output_widget.insert(tk.END, f"\n[+] 200 or 403 responses found for {domain}. Results saved to {final_output_file}.\n", "light_green")
-            else:  # Hiç uygun sonuç yoksa
-                os.remove(temp_output_file)  # Geçici dosyayı sil
+            else: 
+                os.remove(temp_output_file)  
                 if output_widget:
                     output_widget.insert(tk.END, f"\n[!] No 200 or 403 responses found for {domain}. Skipping.\n", "red")
 
@@ -178,12 +177,11 @@ def fetch_subdomains(domain, output_widget):
         result = run_command(command, output_widget)
         unique_domains.update(result)
 
-    # Filter and save cleaned URLs
     with open("subdomains.txt", "w") as outfile:
         cleaned_urls = set()
         for url in unique_domains:
-            url = url.rstrip("/")  # Remove trailing "/"
-            # Check if the URL matches a valid domain format
+            url = url.rstrip("/")  
+
             if re.match(r'^https?://[^?/-]+\.[a-z]{2,}$', url):
                 cleaned_urls.add(url)
 
@@ -204,7 +202,7 @@ def run_paramspider(output_widget):
     try:
         input_file = "subdomains.txt"
         results_folder = "results/paramspider"
-        os.makedirs(results_folder, exist_ok=True)  # Klasörü oluştur (varsa hata yapmaz)
+        os.makedirs(results_folder, exist_ok=True) 
 
         if not os.path.exists(input_file):
             raise FileNotFoundError(f"{input_file} not found. Please run subdomain scan first.")
@@ -227,24 +225,24 @@ def run_paramspider(output_widget):
                 process = subprocess.Popen(command, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE, text=True)
                 stdout, stderr = process.communicate()
 
-                # Çıktıyı GUI'de göster
+             
                 if stdout:
                     output_widget.insert(tk.END, stdout, "default")
                 if stderr:
                     output_widget.insert(tk.END, stderr, "red")
 
-                # Anlamlı sonuçlar için kontrol
+             
                 result_lines = [
                     line.strip() for line in stdout.splitlines()
-                    if line.strip() and "=" in line  # "=" içeren satırlar anlamlı kabul edilir
+                    if line.strip() and "=" in line 
                 ]
 
-                if result_lines:  # Eğer anlamlı sonuç varsa
+                if result_lines: 
                     output_file = os.path.join(results_folder, f"{sanitized_domain}.txt")
                     with open(output_file, "w") as outfile:
                         outfile.write("\n".join(result_lines))
                     output_widget.insert(tk.END, f"[+] Results saved to {output_file}\n", "light_green")
-                else:  # Eğer sonuç yoksa
+                else:  
                     output_widget.insert(tk.END, f"[!] No valid results found for {sanitized_domain}. Skipping.\n", "red")
 
             except subprocess.CalledProcessError as e:
@@ -275,9 +273,7 @@ def start_full_scan(domain, output_widget):
 
 
 def move_scan_results_to_reports(output_widget):
-    """
-    Ensures the 'results' folder exists and moves the specified files into it.
-    """
+
     try:
         reports_folder = "results"
         os.makedirs(reports_folder, exist_ok=True)
@@ -296,6 +292,7 @@ def move_scan_results_to_reports(output_widget):
             else:
                 output_widget.insert(tk.END, f"File not found: {file_name}\n", "red")
 
+        output_widget.insert(tk.END, "\n[+] Scanning completed. All results have been moved to the 'results' folder.\n", "light_green")
         output_widget.yview(tk.END)
 
     except Exception as e:
@@ -304,9 +301,6 @@ def move_scan_results_to_reports(output_widget):
 
 
 def main():
-    """
-    Sets up the main GUI for the Bug Hunter Scanner.
-    """
     root = tk.Tk()
     root.title("Bug Hunter GUI")
     root.geometry("1000x1000")
