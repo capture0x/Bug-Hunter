@@ -1,1 +1,6 @@
-pillow==11.0.0
+os
+re
+subprocess
+threading
+tk
+Pillow
