@@ -2,8 +2,6 @@ import subprocess
 import re
 from tkinter import messagebox
 
-
-# ANSI renk kodlarını temizleyen fonksiyon
 def clean_output(text):
     """
     ANSI renk kodlarını, gereksiz sembolleri ve boşlukları temizler.
@@ -15,14 +13,12 @@ def clean_output(text):
     return cleaned_text
 
 
-# XSS tarama modülü
 def run_xss_scan(domain, output_widget):
     """
     XSS tarama modülü. Hem `waybackurls | kxss` hem de `qsreplace | curl` çalıştırır.
     Sonuçları 'xss_kxss.txt' ve 'xss_qsreplace.txt' dosyalarına kaydeder.
     """
     try:
-        # 1. KXSS taraması
         kxss_command = f"echo http://{domain}/ | waybackurls | kxss > xss_kxss.txt"
         output_widget.insert("end", f"Running KXSS Scan: {kxss_command}\n")
         output_widget.yview("end")
@@ -40,7 +36,6 @@ def run_xss_scan(domain, output_widget):
         output_widget.insert("end", "KXSS Scan completed! Results saved to 'xss_kxss.txt'.\n")
         output_widget.yview("end")
 
-        # 2. qsreplace + curl taraması
         qsreplace_command = (
             f"waybackurls {domain} | grep '=' | qsreplace '\"><script>alert(1)</script>' | "
             f"while read host; do curl -s --path-as-is --insecure \"$host\" | grep -qs '<script>alert(1)</script>' "
@@ -63,7 +58,6 @@ def run_xss_scan(domain, output_widget):
         output_widget.yview("end")
 
     except Exception as e:
-        # Hata durumunda mesaj kutusu göster
         output_widget.insert("end", f"An error occurred during the XSS scan: {e}\n")
         output_widget.yview("end")
         messagebox.showerror("Error", "An error occurred during the XSS scan.")
