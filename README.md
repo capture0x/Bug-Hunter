@@ -42,9 +42,10 @@
 2. Install dependencies:
    - **Ensure Python 3.x is installed.**
    - **Install required Python packages**:
-     `pip install -r requirements.txt`
-     `chmod +x install.sh`
-     `bash install.sh`
+     ```bash
+     pip install -r requirements.txt
+     chmod +x install.sh
+     bash install.sh
   - **Install additional tools like** `subfinder`, `assetfinder`, `ffuf`, `httpx`, and `ParamSpider`
 3. Run the application:
     `python3 bug.py`
