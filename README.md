@@ -2,7 +2,7 @@
 
 **Bug Hunter** is a comprehensive and advanced tool tailored for bug bounty hunters, offering streamlined subdomain discovery, directory scanning, parameter extraction, and vulnerability detection. With its intuitive GUI, Bug Hunter integrates various tools and techniques to provide a seamless and efficient bug-hunting experience.
 
-<img src="https://raw.githubusercontent.com/capture0x/Bug-Hunter/refs/heads/main/6.png" width="100%"></img>
+<img src="https://raw.githubusercontent.com/capture0x/Bug-Hunter/refs/heads/main/screenshots/6.png" width="100%"></img>
 
 ## ⚙️ Features 
 
@@ -95,12 +95,12 @@
   - `re`
 ## 📷 Screenshots
 
-<img src="https://raw.githubusercontent.com/capture0x/Bug-Hunter/refs/heads/main/1.png" width="32%"></img>
-<img src="https://raw.githubusercontent.com/capture0x/Bug-Hunter/refs/heads/main/2.png" width="32%"></img>
-<img src="https://raw.githubusercontent.com/capture0x/Bug-Hunter/refs/heads/main/3.png" width="32%"></img>
-<img src="https://raw.githubusercontent.com/capture0x/Bug-Hunter/refs/heads/main/4.png" width="32%"></img>
-<img src="https://raw.githubusercontent.com/capture0x/Bug-Hunter/refs/heads/main/5.png" width="32%"></img>
-<img src="https://raw.githubusercontent.com/capture0x/Bug-Hunter/refs/heads/main/7.png" width="32%"></img>
+<img src="https://raw.githubusercontent.com/capture0x/Bug-Hunter/refs/heads/main/screenshots/1.png" width="32%"></img>
+<img src="https://raw.githubusercontent.com/capture0x/Bug-Hunter/refs/heads/main/screenshots/2.png" width="32%"></img>
+<img src="https://raw.githubusercontent.com/capture0x/Bug-Hunter/refs/heads/main/screenshots/3.png" width="32%"></img>
+<img src="https://raw.githubusercontent.com/capture0x/Bug-Hunter/refs/heads/main/screenshots/4.png" width="32%"></img>
+<img src="https://raw.githubusercontent.com/capture0x/Bug-Hunter/refs/heads/main/screenshots/5.png" width="32%"></img>
+<img src="https://raw.githubusercontent.com/capture0x/Bug-Hunter/refs/heads/main/screenshots/7.png" width="32%"></img>
 
 ## 🤖 Contributing
 
