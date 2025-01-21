@@ -309,7 +309,7 @@ def main():
     """
     root = tk.Tk()
     root.title("Bug Hunter GUI")
-    root.geometry("1000x750")
+    root.geometry("1000x1000")
     root.configure(bg="#1E1E2E")
 
     header_frame = tk.Frame(root, bg="#1E1E2E")
